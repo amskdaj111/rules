@@ -18,9 +18,10 @@ dns:
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
     - '*.lan'
-    - 'geosite:cn' 
+    - 'geosite:cn'
   nameserver-policy:
-    'geosite:geolocation-!cn': 
+    '+.msftconnecttest.com': system
+    'geosite:geolocation-!cn':
       - https://doh.pub/dns-query
       - https://dns.alidns.com/dns-query
   prefer-h3: true
@@ -28,6 +29,7 @@ dns:
 proxies: []
 proxy-groups: []
 rules: []
+
 
 
 
