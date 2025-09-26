@@ -18,17 +18,20 @@ dns:
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
     - '*.lan'
-    - 'geosite:cn' 
+    - 'geosite:cn'
   nameserver-policy:
-    'geosite:geolocation-!cn': 
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.google/dns-query
-    - https://dns.nextdns.io/
+    '+.edu.cn': system
+    '+.msftconnecttest.com': system
+    'geosite:geolocation-!cn':
+      - https://cloudflare-dns.com/dns-query
+      - https://dns.google/dns-query
+      - https://dns.nextdns.io/
   prefer-h3: true
 
 proxies: []
 proxy-groups: []
 rules: []
+
 
 
 
